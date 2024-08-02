@@ -1,0 +1,267 @@
+/* Add this to styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+header {
+  background-color:#ffb6c1;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #c62828;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInHeader 1s ease forwards;
+}
+
+@keyframes fadeInHeader {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  padding: 20px;
+}
+
+.envelope {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeInEnvelope 1s ease-out forwards;
+}
+
+.flap {
+  width: 100%;
+  height: 0;
+  border-top: 200px solid #fff;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  position: absolute;
+  top: -200px;
+  left: 0;
+  animation: openEnvelope 2s forwards;
+}
+
+@keyframes openEnvelope {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+@keyframes fadeInEnvelope {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  animation: fadeInSection 1s ease-out 1s forwards;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInHeading 1s ease forwards;
+}
+
+@keyframes fadeInHeading {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  opacity: 0;
+  animation: fadeInParagraph 1s ease forwards;
+}
+
+@keyframes fadeInParagraph {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInFooter 1s ease forwards;
+}
+
+@keyframes fadeInFooter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Additional animations */
+header h1 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInHeaderSpan 1s ease forwards;
+}
+
+@keyframes fadeInHeaderSpan {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.envelope:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.8) 100%);
+  animation: fadeInEnvelopeBg 1s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInEnvelopeBg {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* Add this to styles.css */
+
+/* Heart animation */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart {
+  width: 500px; /* Adjust width */
+  height: 485px; /* Adjust height */
+  position: absolute;
+  top: 40%; /* Adjust top position */
+  left: 40%;
+  transform: translateX(-50%);
+  animation: heartbeat 1s infinite;
+  z-index: 0; /* Set z-index to position behind text */
+  opacity:0.5;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 75px; /* Adjust width */
+  height: 120px; /* Adjust height */
+  border-radius: 60px 60px 0 0; /* Adjust border-radius */
+  background: #ff6b6b;
+}
+
+.heart::before {
+  left: 75px; /* Adjust left position */
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+
+/* Audio player styles */
+#audioPlayer::-webkit-media-controls-panel {
+  background-color: #ff6b6b; /* Pink background color */
+  border-radius: 10px; /* Add border radius */
+  padding: 10px; /* Add padding */
+  transition: background-color 0.5s ease; /* Add transition */
+}
+
+#audioPlayer::-webkit-media-controls-play-button {
+  background-color: #fff; /* White play button color */
+  border-radius: 50%; /* Make play button circular */
+  padding: 5px; /* Add padding */
+  transition: background-color 0.5s ease; /* Add transition */
+}
+
+#audioPlayer::-webkit-media-controls-play-button:hover {
+  background-color: #fcd0d0; /* Light pink play button color on hover */
+}
